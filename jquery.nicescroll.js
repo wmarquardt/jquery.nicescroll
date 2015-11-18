@@ -1,6 +1,6 @@
 /* jquery.nicescroll
--- version 3.6.6
--- copyright 2015-11-17 InuYaksa*2015
+-- version 3.6.7
+-- copyright 2015-11-18 InuYaksa*2015
 -- licensed under the MIT
 --
 -- http://nicescroll.areaaperta.com/
@@ -232,7 +232,7 @@
 
     var self = this;
 
-    this.version = '3.6.6';
+    this.version = '3.6.7';
     this.name = 'nicescroll';
 
     this.me = me;
