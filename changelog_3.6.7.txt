@@ -1,0 +1,24 @@
+Changelog nicescroll release 3.6.7
+http://nicescroll.areaaperta.com/
+https://github.com/inuyaksa/jquery.nicescroll
+
+
+New options
+none
+
+Changed features
+none
+
+Fixes
+- Horizontal RTL mode support #508 
+
+ 
+
+Thanks to great contributors!!
+
+hakatashi
+
+
+
+TODO
+- deprecate legacy browsers
