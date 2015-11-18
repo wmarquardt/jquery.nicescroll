@@ -601,18 +601,16 @@
         return val;
       };
       this.setScrollLeft = function(val) {
-<<<<<<< HEAD
-        return setTimeout(function() {self.docscroll.scrollLeft((self.detected.ismozilla && self.isrtlmode) ? -val : val)}, 1);
-=======
-        if (self.hasreversehr) {
-          if (self.detected.ismozilla) {
-            val = -(self.page.maxw - val);
-          } else {
-            val = self.page.maxw - val;
-          }
-        }
-        return self.docscroll.scrollLeft(val);
->>>>>>> refs/heads/pr/508
+        return setTimeout(function() {
+					if (self.hasreversehr) {
+						if (self.detected.ismozilla) {
+							val = -(self.page.maxw - val);
+						} else {
+							val = self.page.maxw - val;
+						}
+					}
+					return self.docscroll.scrollLeft(val);
+				}, 1);					
       };
     }
 
@@ -2128,7 +2126,7 @@
         top: self.scroll.y
       });
       if (self.cursorh) {        
-        var lx = self.scroll.x;
+        var lx = (self.hasreversehr) ? self.scrollvaluemaxw-self.scroll.x : self.scroll.x;
         (!self.rail.align && self.rail.visibility) ? self.cursorh.css({
           width: self.cursorwidth,
           left: lx + self.rail.width
