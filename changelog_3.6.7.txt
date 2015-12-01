@@ -7,11 +7,13 @@ New options
 none
 
 Changed features
-none
+- optimized debounced function using requestAnimationFrame
+- optimized lazyResize
 
 Fixes
 - Horizontal RTL mode support #508 
-
+- Horizontal mousewheel scroll (shift + scroll) not working properly #547 
+- jQueryUI draggable scroll Invalid ? #530 
  
 
 Thanks to great contributors!!
