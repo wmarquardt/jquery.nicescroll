@@ -1,6 +1,6 @@
 /* jquery.nicescroll
--- version 3.6.7 B3
--- copyright 2015-11-18 InuYaksa*2015
+-- version 3.6.7 B4
+-- copyright 2015-12-04 InuYaksa*2015
 -- licensed under the MIT
 --
 -- http://nicescroll.areaaperta.com/
@@ -237,7 +237,7 @@
 
     var self = this;
 
-    this.version = '3.6.7 B3';
+    this.version = '3.6.7 B4';
     this.name = 'nicescroll';
 
     this.me = me;
@@ -762,7 +762,6 @@
             width: self.railh.width
           });
         }
-
 
       }
     };
@@ -1517,7 +1516,7 @@
             if (self.rail.drag) {
               if (self.rail.drag.pt != 1) return true;
 							
-							console.log('mouseup');
+//							console.log('mouseup');
 							
               if (cap.hasmousecapture) document.releaseCapture();
               if (self.isiframe && !cap.hasmousecapture) self.doc.css("pointer-events", self.saved.csspointerevents);              
@@ -1582,7 +1581,7 @@
 
             self.bind(self.win, "mousedown", self.ontouchstart); // control content dragging
 
-            self.onclick = (cap.isios) ? false : function(e) {
+            self.onclick = (cap.isios) ? false : function(e) {  // it needs to check IE11 ???
               if (self.lastmouseup) {
                 self.lastmouseup = false;
                 return self.cancelEvent(e);
@@ -1812,9 +1811,8 @@
               //self.cursorh && self.bind(self.cursorh, "mousemove", self.onmousemove);
               self.cursorh && self.bind(self.cursorh, "mouseup", self.onmouseup);
             } else {
-              self.bind(self.rail, "mousedown", function(e){e.preventDefault();});  // prevent text selection              self.railh&&self.bind(self.railh, "mousedown", function(e){e.preventDefault();});
-              
-              
+              self.bind(self.rail, "mousedown", function(e){e.preventDefault();});  // prevent text selection             
+							self.railh&&self.bind(self.railh, "mousedown", function(e){e.preventDefault();});
             }
 
           }
@@ -1979,7 +1977,7 @@
           self.observerbody = new ClsMutationObserver(function(mutations) {
             mutations.forEach(function(mut){
               if (mut.type=="attributes") {
-                return ($("body").hasClass("modal-open") && !$.contains($('.modal-dialog')[0],self.doc[0])) ? self.hide() : self.show();  // Support for Bootstrap modal; Added check if the nice scroll element is inside a modal
+                return ($("body").hasClass("modal-open") && $("body").hasClass("modal-dialog") && !$.contains($('.modal-dialog')[0],self.doc[0])) ? self.hide() : self.show();  // Support for Bootstrap modal; Added check if the nice scroll element is inside a modal
               }
             });  
             if (document.body.scrollHeight!=self.page.maxh) return self.lazyResize(30);
@@ -2751,7 +2749,8 @@
           self.scrollmom.stop()
         }
         self.lastdeltay += py;
-        self.debounced("mousewheely", function() {
+//        self.debounced("mousewheely", function() {
+	      self.synched("mousewheely", function() {
           var dt = self.lastdeltay;
           self.lastdeltay = 0;
           if (!self.rail.drag) {
@@ -2855,6 +2854,7 @@
         var ex = (istime) ? ((dif > 20) ? dif : 0) : self.getTransitionSpeed(dif);
         var trans = (ex) ? cap.prefixstyle + 'transform ' + ex + 'ms ease-out' : '';
         if (!self.lasttransitionstyle || self.lasttransitionstyle != trans) {
+//					console.log(trans);
           self.lasttransitionstyle = trans;
           self.doc.css(cap.transitionstyle, trans);
         }
