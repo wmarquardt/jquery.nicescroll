@@ -5,6 +5,8 @@ v. 3.6.6 11-17-2015
  - [Repo: github.com/inuyaksa/jquery.nicescroll](https://github.com/inuyaksa/jquery.nicescroll)
  - [Twitter: @nicescroll](https://twitter.com/nicescroll)
 
+ [![Join the chat at https://gitter.im/inuyaksa/jquery.nicescroll](https://badges.gitter.im/inuyaksa/jquery.nicescroll.svg)](https://gitter.im/inuyaksa/jquery.nicescroll?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 > Nicescroll as a Greasemonkey plugin: http://userscripts.org/scripts/show/119910 (freezed)
 
 
