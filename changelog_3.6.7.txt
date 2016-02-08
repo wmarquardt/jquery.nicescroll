@@ -15,12 +15,13 @@ Fixes
 - Horizontal mousewheel scroll (shift + scroll) not working properly #547 
 - jQueryUI draggable scroll Invalid ? #530 
 - Fix error when using mm.foundation.modal #550 
+- fix docscroll undefined of null by #557
  
 
 Thanks to great contributors!!
 
 hakatashi
-
+kris-2k15
 
 
 TODO
