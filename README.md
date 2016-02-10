@@ -12,7 +12,7 @@ v. 3.6.7 02-08-2016
 
 > Nicescroll is a jquery plugin, for nice scrollbars with a very similar ios/mobile style.
 
-  - HORIZONAL scrollbar support!
+  - HORIZONTAL scrollbar support!
   - It supports DIVs, IFrames, textarea, and document page (body) scrollbars.
   - Compatible with all desktop browser: Firefox 4+, Chrome 5+, Safari 4+ (win/mac), Opera 10+, IE 6+. (all A-grade browsers)
   - Compatible with mobile device: iPad/iPhone/iPod, Android 2.2+, Blackberry phones and Playbook (WebWorks/Table OS), Windows Phone 7.5 Mango.
